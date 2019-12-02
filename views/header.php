@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+  echo var_dump($_SESSION); 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,7 +10,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Porto - Responsive HTML5 Template 7.5.0</title>
+		<title>Clothing in Style - Four to Seven Tee</title>
 
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
@@ -64,7 +68,7 @@
             <div class="header-row">
               <div class="header-logo">
                 <a href="index.php">
-                  <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" src="content/img/logo-corporate-5.png">
+                  <img alt="Porto" width="200" height="48" data-sticky-width="200" data-sticky-height="48" src="content/img/cis4270logo.png">
                 </a>
               </div>
             </div>
@@ -641,12 +645,17 @@
                         </ul>
                       </li> -->
                       <li class="dropdown">
-                        <a class="dropdown-item dropdown-toggle" href="#">
+                        <a class="dropdown-item dropdown-toggle" href="?ctlr=home&amp;action=aboutUs">
+                          About Us
+                        </a>
+                      </li>
+                      <li class="dropdown">
+                        <a class="dropdown-item dropdown-toggle" href="?ctlr=home&amp;action=featured">
                           Explore
                         </a>
                         <ul class="dropdown-menu">
                           <li class="dropdown-submenu">
-                            <a class="dropdown-item" href="?ctlr=home&amp;action=newPost">Make a new post</a>
+                            <a class="dropdown-item" href="?ctlr=home&amp;action=featured">Featured posts</a>
                             <!-- <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="contact-us-advanced.php">Contact Us - Advanced</a></li>
                               <li><a class="dropdown-item" href="contact-us.html">Contact Us - Basic</a></li>
@@ -654,26 +663,36 @@
                             </ul> -->
                           </li>
                           <li class="dropdown-submenu">
-                            <a class="dropdown-item" href="?ctlr=home&amp;action=featured">Featured Posts</a>
+                            <a class="dropdown-item" href="?ctlr=home&amp;action=newPost">Make a new post</a>
                           </li>
                         </ul>
-                      </li> 
-                      <li class="dropdown">
-                        <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=register">
-                          Register
-                        </a>
                       </li>
-                      <li class="dropdown">
-                        <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=login">
-                          Login
-                        </a>
-                      </li>
-                      <!--HELLO-------------------------------------------------------------------------------->
-                      <li class="dropdown">
-                        <a class="dropdown-item dropdown-toggle" href="?ctlr=home&amp;action=aboutUs">
-                          About Us
-                        </a>
-                      </li><!--End-->
+                      <?php 
+                          if($_SESSION['userName']!= null || $_SESSION['email'] != null) {
+                            echo '
+                            <li class="dropdown">
+                              <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=account">
+                                Account
+                              </a>
+                            </li>                      
+                            <li class="dropdown">
+                              <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=logout">
+                                Logout
+                              </a>
+                            </li>';
+                          }else {
+                            echo ' <li class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=login">
+                              Login
+                            </a>
+                          </li>
+                          <li class="dropdown">
+                            <a class="dropdown-item dropdown-toggle" href="?ctlr=user&amp;action=register">
+                              Register
+                            </a>
+                          </li>';
+                          } ?>
+
                     </ul>
                   </nav>
                 </div>

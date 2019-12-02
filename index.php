@@ -7,11 +7,8 @@
  */
 // Non-web tree base directory for this application.
 define('NON_WEB_BASE_DIR', '/Users/michelletran/cis4270/');
-define('APP_NON_WEB_BASE_DIR', NON_WEB_BASE_DIR . 'cis4270_MTran/');
+define('APP_NON_WEB_BASE_DIR', NON_WEB_BASE_DIR . 'cis4270/');
 include_once(APP_NON_WEB_BASE_DIR . 'includes/cis4270Includes.php');
-include_once(APP_NON_WEB_BASE_DIR . 'db/phpmysqlconnect.php');
-
-$conn=null;
 
 //SANITIZATION
 // Sanitze the routing input from links and forms - set default values if
@@ -90,4 +87,3 @@ switch ($ctlr) {
         $controller = new DefaultController();
 }
 $controller->run($action, $vm);
-
