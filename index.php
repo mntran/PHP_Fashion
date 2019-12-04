@@ -7,7 +7,7 @@
  */
 // Non-web tree base directory for this application.
 define('NON_WEB_BASE_DIR', '/Users/michelletran/cis4270/');
-define('APP_NON_WEB_BASE_DIR', NON_WEB_BASE_DIR . 'cis4270/');
+define('APP_NON_WEB_BASE_DIR', NON_WEB_BASE_DIR . 'ProjectFramework/');
 include_once(APP_NON_WEB_BASE_DIR . 'includes/cis4270Includes.php');
 
 //SANITIZATION
@@ -74,6 +74,16 @@ switch ($ctlr) {
                 $action = 'registerPOST';
             }else {
                 $action = 'logRegGET';
+            }
+        }
+        break;
+    case 'post':
+        $controller = new PostController();
+        if ($action === 'newPost') {
+            if ($post) {
+                $action = 'newPostPOST';
+            }else {
+                $action = 'newPostGET';
             }
         }
         break;

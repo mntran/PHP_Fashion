@@ -68,7 +68,7 @@
             <div class="header-row">
               <div class="header-logo">
                 <a href="index.php">
-                  <img alt="Porto" width="200" height="48" data-sticky-width="200" data-sticky-height="48" src="content/img/cis4270logo.png">
+                  <img alt="Porto" width="200" height="80" data-sticky-width="200" data-sticky-height="60" src="content/img/header-final.png">
                 </a>
               </div>
             </div>
@@ -80,7 +80,7 @@
                   <nav class="collapse">
                     <ul class="nav nav-pills" id="mainNav">
                       <li class="dropdown">
-                        <a class="dropdown-item dropdown-toggle active" href="index.php">
+                        <a class="dropdown-item dropdown-toggle" href="index.php">
                           Home
                         </a>
                       </li>
@@ -663,7 +663,7 @@
                             </ul> -->
                           </li>
                           <li class="dropdown-submenu">
-                            <a class="dropdown-item" href="?ctlr=home&amp;action=newPost">Make a new post</a>
+                            <a class="dropdown-item" href="?ctlr=post&amp;action=newPost">Make a new post</a>
                           </li>
                         </ul>
                       </li>
